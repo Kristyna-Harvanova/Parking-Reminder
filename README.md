@@ -4,7 +4,7 @@ A cross-platform parking reminder app for iOS and Android. Drop a pin when you p
 
 Built with React Native, Expo SDK 54, and TypeScript.
 
-## Screenshots
+## App Preview
 
   <p align="center">
     <img src="assets/screenshots/home.PNG" width="19%" />
