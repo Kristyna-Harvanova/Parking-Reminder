@@ -1,23 +1,33 @@
 {
   "expo": {
-    "name": "ParkingReminder_init",
-    "slug": "ParkingReminder_init",
+    "name": "ParkingReminder",
+    "slug": "parking-reminder",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "parkingreminderinit",
+    "scheme": "parkingreminder",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.parkingreminder.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We need your location to save where you parked.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Background location is used to notify you when you arrive at your car.",
+        "NSCameraUsageDescription": "Camera is used to take a photo of your parking ticket."
+      }
     },
     "android": {
+      "package": "com.parkingreminder.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#007AFF",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "backgroundImage": "./assets/images/android-icon-background.png"
       },
-      "predictiveBackGestureEnabled": false
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "CAMERA"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -27,11 +37,15 @@
     "plugins": [
       "expo-router",
       [
-        "expo-splash-screen",
+        "expo-location",
         {
-          "image": "./assets/images/splash-icon.png",
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "locationAlwaysAndWhenInUsePermission": "ParkingReminder uses your location to notify you when you arrive at your car."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "ParkingReminder needs camera access to photograph your parking ticket."
         }
       ]
     ],

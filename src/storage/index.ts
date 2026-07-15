@@ -1,0 +1,1 @@
+export { ParkingRepository } from './repository';

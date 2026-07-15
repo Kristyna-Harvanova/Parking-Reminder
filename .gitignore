@@ -39,3 +39,9 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# project planning (private)
+PROJECT.md
+
+# Claude Code local permissions
+.claude/settings.local.json
